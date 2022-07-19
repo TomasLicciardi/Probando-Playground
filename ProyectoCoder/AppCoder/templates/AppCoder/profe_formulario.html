@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 style="color: green">FORMULARIO PROFESORES!!</h1>
+     
+    {% if profe_formulario.errors %}
+    <h4 style="color: red">HA OCURRIDO UN ERROR!!</h4>
+    {% endif %}
+
+    <form action="{% url 'profe_formulario' %}" method="POST"> {% csrf_token %}
+
+        <table>
+
+            {{profe_formulario.as_table}}
+
+        </table>
+        <input type="submit" value="ENVIAR">
+    </form>
+
+
+</body>
+</html>
